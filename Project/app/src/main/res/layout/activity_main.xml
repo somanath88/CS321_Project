@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_mealFinderID"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="143dp"
+        android:layout_height="82dp"
+        android:text="@string/meal_finder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212" />
+
+    <Button
+        android:id="@+id/btn_groceryFunctionID"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="143dp"
+        android:layout_height="82dp"
+        android:text="@string/grocery_function"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <Button
+        android:id="@+id/btn_weightTrackerID"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="143dp"
+        android:layout_height="82dp"
+        android:text="@string/weight_tracker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <Button
+        android:id="@+id/btn_gymPartnerID"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="143dp"
+        android:layout_height="82dp"
+        android:text="@string/gym_partner_finder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

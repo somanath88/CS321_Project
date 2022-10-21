@@ -1,6 +1,6 @@
 # CS321_Project
 # Somanath Dandibhotla, Rohit Barua, Faisal Alkaabi
 
-[x] Sourced the Android and Java API client from Spoonacular
+[x] Sourced the Python API client from Spoonacular
 
-[x] Basic template ready for the application
+[x] Main python file is setup

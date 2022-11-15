@@ -43,7 +43,7 @@ with tab3:
    
 with tab4:
    st.header("Restaurants")
-   st.image("https://img.freepik.com/free-photo/people-gym-talking-making-exercise-plans_23-2149175368.jpg",width=400)
+   st.image("https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg",width=400)
    cuisine = st.text_input(
         "Pick a type of cuisine",
         placeholder= "Enter a cuisine",

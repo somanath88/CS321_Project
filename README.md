@@ -11,7 +11,9 @@
 
 - [x] Grocery finder is done. We need to find a way to center the images. 
 
-API KEY : 6514dc2a1dmsh2ad13bdb1c40ba5p1c95b1jsn9922c38c90fa
+
+API KEY : 6514dc2a1dmsh2ad13bdb1c40ba5p1c95b1jsn9922c38c90fa (free version )
+API KEY : 442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005 (5,000 requests/day)
 
 
 # References

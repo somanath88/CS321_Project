@@ -5,7 +5,9 @@
 
 - [x] Main python file is setup
 
-- [x] app.py runs the meal finder function successfully. querystring has a parameter called number which is set to 1. Don't change it cuz it costs points to get more results.
+- [x] app.py runs the meal finder function successfully. querystring has a parameter called number which is set to 1. !!Don't change it cuz it costs points to get more results!!
+
+- [x] "Find Restaurants" implementation has been added, but requires some final touches to give it a more appealing appearance
 
 API KEY : 6514dc2a1dmsh2ad13bdb1c40ba5p1c95b1jsn9922c38c90fa
 

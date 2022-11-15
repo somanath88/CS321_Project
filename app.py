@@ -115,6 +115,6 @@ with tab4:
             st.write("Delivery can be done by " + info["name"])
          if(info["offers_third_party_delivery"] == False):
             st.write("Delivery is not possible through third-party!")
-         if(info["offers_first_party_delivery"] == True):
+         if(info["offers_third_party_delivery"] == True):
             st.write("Delivery can be done by third-party!")
    

@@ -1,11 +1,13 @@
 import streamlit as st
 import requests
+import json
+from PIL import Image
+
 st.set_page_config(page_title="30%70",page_icon = ":🧊:", layout= "wide")
 st.header("30/70")
 
 
-# if st.button('Meal Finder'):
-#     st.write(meal_finder)    
+ 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Meal Finder", "Groceries", "Weight Tracker", "Find Restaurants"])
 
@@ -33,9 +35,39 @@ with tab1:
         response = requests.request("GET", url, headers=headers, params=querystring)
 
         st.write(response.json())
+
 with tab2:
    st.header("Groceries")
    st.image("https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg", width=400)
+   itemName = st.text_input("Item's Name:");
+   if itemName:
+      st.write('Input the macros of ',itemName)
+   itemCalories = st.number_input('Calories:', min_value=0, max_value=800, value=50, step=10)
+   itemProteins = st.number_input('Protein:', min_value=0, max_value=100, value=0, step=1)
+   itemCarbs = st.number_input('Carbs:', min_value=0, max_value=100, value=0, step=1)
+   itemFats = st.number_input('Fats:', min_value=0, max_value=100, value=0, step=1)
+
+   if st.button('Find Item'):
+      url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search"
+
+      querystring = {"query":itemName,"maxCalories":itemCalories,"minProtein":"0","maxProtein":itemProteins,"minFat":"0","maxFat":itemFats,"minCarbs":"0","maxCarbs":itemCarbs,"minCalories":"0","offset":"0","number":"20"}
+
+      headers = {
+         "X-RapidAPI-Key": "442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005",
+         "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+      }
+
+      response = requests.request("GET", url, headers=headers, params=querystring)
+
+      result = response.json()
+
+
+      for i in result["products"]:
+         st.image(i["image"], caption=i["title"])
+         st.write("")
+
+
+
 
 with tab3:
    st.header("Weight Tracker")
@@ -117,4 +149,3 @@ with tab4:
             st.write("Delivery is not possible through third-party!")
          if(info["offers_third_party_delivery"] == True):
             st.write("Delivery can be done by third-party!")
-   

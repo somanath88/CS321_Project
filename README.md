@@ -13,7 +13,7 @@
 
 - [x] Added some formatting changes to Find Restaurants (please give some feedback after reviewing) 
 
-- [x] Fixed the output for Meal finder and Grocery Finder (width of images). Removed minimum values for meal finder and I added an input text for query. Also there is a function in the API called "Get Menu Item Information", im thinking on adding it to meal finder to get more details of each meal found and displaying them with the results.
+- [x] Fixed the output for Meal finder and Grocery Finder (width of images & text). Removed minimum values for meal finder and I added an input text for query. Also there is a function in the API called "Get Menu Item Information", im thinking on adding it to meal finder to get more details of each meal found and displaying them with the results.
 
 
 

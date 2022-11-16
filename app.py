@@ -15,31 +15,38 @@ tab1, tab2, tab3, tab4 = st.tabs(["Meal Finder", "Groceries", "Weight Tracker", 
 with tab1:
    st.header("Meal Finder")
    st.image("https://media.cnn.com/api/v1/images/stellar/prod/201222103421-healthyfactor-meals.jpg",width=400)
+   mealType = st.text_input("Meal Type:");
+   if mealType:
+      st.success('You chose '+mealType,icon="✅")
+      #st.write('Input the macros of the ',mealType)
    calories=st.slider('Calories',50, 800, None,5)
-   maxProtein= st.slider('Maximum Protein',10,100,None,1,)
-   minProtein=st.slider('Minimum Protein',10, 100, None,1)
-   maxCarbs= st.slider('Maximum Carbs',10,100,None,1,)
-   minCarbs=st.slider('Minimum Carbs',10, 100, None,1)
+   maxProtein= st.slider('Maximum Protein',5,100,None,1,)
+   maxCarbs= st.slider('Maximum Carbs',5,100,None,1,)
    maxFat= st.slider('Maximum Fat',1,100,None,1,)
-   minFat=st.slider('Minimum Fat',1, 100, None,1)
 
    if st.button('Find Meal'):
-        url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/menuItems/search"
+      url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/menuItems/search"
 
-        querystring = {"query":"burger","offset":"0","number":"1","minCalories":50,"maxCalories":calories,"minProtein":minFat,"maxProtein":maxProtein,"minFat":minFat,"maxFat":maxFat,"minCarbs":minCarbs,"maxCarbs":maxCarbs}
+      querystring = {"query":mealType,"offset":"0","number":"5","minCalories":0,"maxCalories":calories,"minProtein":0,"maxProtein":maxProtein,"minFat":0,"maxFat":maxFat,"minCarbs":0,"maxCarbs":maxCarbs}
 
-        headers = {
-            "X-RapidAPI-Key": "e3204cea803349a783d0c7a7f379c3c1",
+      headers = {
+            "X-RapidAPI-Key": "442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005",
             "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         }
 
-        response = requests.request("GET", url, headers=headers, params=querystring)
+      response = requests.request("GET", url, headers=headers, params=querystring)
 
-        st.write(response.json())
+      result = response.json()
+
+      #st.write(result)
+
+      for i in result["menuItems"]:
+         st.image(i["image"], caption=i["title"]+"\nRestaurant: "+i["restaurantChain"],width=200)
+
 
 with tab2:
    st.header("Groceries")
-   st.image("https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg", width=400)
+   st.image("https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg", width=250)
    itemName = st.text_input("Item's Name:");
    if itemName:
       st.write('Input the macros of ',itemName)
@@ -51,7 +58,7 @@ with tab2:
    if st.button('Find Item'):
       url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search"
 
-      querystring = {"query":itemName,"maxCalories":itemCalories,"minProtein":"0","maxProtein":itemProteins,"minFat":"0","maxFat":itemFats,"minCarbs":"0","maxCarbs":itemCarbs,"minCalories":"0","offset":"0","number":"20"}
+      querystring = {"query":itemName,"maxCalories":itemCalories,"minProtein":"0","maxProtein":itemProteins,"minFat":"0","maxFat":itemFats,"minCarbs":"0","maxCarbs":itemCarbs,"minCalories":"0","offset":"0","number":"10"}
 
       headers = {
          "X-RapidAPI-Key": "442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005",
@@ -64,7 +71,7 @@ with tab2:
 
 
       for i in result["products"]:
-         st.image(i["image"], caption=i["title"])
+         st.image(i["image"], caption=i["title"],width=250)
          st.write("")
 
 
@@ -95,13 +102,13 @@ with tab4:
       )
       button = st.button('Find Restaurant')
    if button:
-      url = "https://api.spoonacular.com/food/restaurants/search?apiKey=e3204cea803349a783d0c7a7f379c3c1"
+      url = "https://api.spoonacular.com/food/restaurants/search?apiKey=77495ee53c1a4c1a8310504513165f8e"
       querystring = {"query": "", "lat": 38.835268, "lng": -77.309476,
       "distance": int(distance), "budget": int(budget), "cuisine": cuisine, "min-rating": float(rating),
       "sort": "", "page": 0}
 
       headers = {
-         "X-RapidAPI-Key": "e3204cea803349a783d0c7a7f379c3c1",
+         "X-RapidAPI-Key": "77495ee53c1a4c1a8310504513165f8e",
          "X-RapidAPI-Host": "https://api.spoonacular.com"
       }
       with st.spinner("Loading..."):

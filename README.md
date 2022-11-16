@@ -9,7 +9,9 @@
 
 - [x] "Find Restaurants" implementation has been added, but requires some final touches to give it a more appealing appearance
 
-- [x] Grocery finder is done. We need to find a way to center the images. 
+- [x] Grocery finder is done. We need to find a way to center the images.
+
+- [x] Added some formatting changes to Find Restaurants (please give some feedback after reviewing) 
 
 
 API KEY : 6514dc2a1dmsh2ad13bdb1c40ba5p1c95b1jsn9922c38c90fa (free version)

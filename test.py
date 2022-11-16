@@ -298,6 +298,7 @@ with tab3:
                exercise_set_count = todays_routine[muscle_group]
                muscle_group_exercises = shuffle(exercises[muscle_group], exercise_set_count)
 
+               #Attempt 1
                for i in range(exercise_set_count):
                   # title = st.text_input('Movie title', 'Life of Brian')
                   # st.write('The current movie title is', title)
@@ -319,6 +320,8 @@ with tab3:
                      print("Invalid input. Please try again.")
                   interact_with_user(muscle_group_exercises[i], int(inp), i==0) 
 
+                  
+               #Attempt 2
                # for i in range(exercise_set_count):
                #    # if checkert == 1:
                #    #    continue

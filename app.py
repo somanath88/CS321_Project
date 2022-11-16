@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import json
+import time
 from PIL import Image
 
 st.set_page_config(page_title="30%70",page_icon = ":🧊:", layout= "wide")

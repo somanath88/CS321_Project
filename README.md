@@ -23,6 +23,8 @@ API KEY : 442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005 (5,000 requests/day
 
 API KEY : 77495ee53c1a4c1a8310504513165f8e (Faisal's Spoonacular's API KEY - free version)
 
+API KEY: e3204cea803349a783d0c7a7f379c3c1 (Rohit's Spoonacular's API KEY - free version)
+
 
 # References
 

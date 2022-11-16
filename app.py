@@ -74,78 +74,53 @@ with tab3:
    st.image("https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1536,b_rgb:f8f8f8/catalog/Conditioning/Strength%20Equipment/Dumbbells/IP1100/IP1100-H_ejvjae.png", width=400)
    
 with tab4:
-   st.header("Restaurants")
-   st.image("https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg",width=400)
-   cuisine = st.text_input(
-        "Pick a type of cuisine",
-        placeholder= "Enter a cuisine",
-   )
-   budget = st.text_input(
-        "Enter your budget",
-        placeholder= "Enter a budget",
-   )
-   distance = st.text_input(
-        "Enter restaurant distance limit in miles",
-        placeholder= "Enter a distant limit",
-   )
-   rating = st.text_input(
-        "Enter minimum rating for restaurant",
-        placeholder= "Enter a rating",
-   )
-   if st.button('Find Restaurant'):
+   col1, col3, col2 = st.columns((2,2,2))
+   with st.sidebar:
+      st.title("Pick a type of cuisine")
+      cuisine = st.radio(label = "Cuisine Type", options = ['Mexican', 'Italian', 'Chinese', 'Mediterranean'], help = "Select a cuisine out of **4** choices")
+      st.header("Pick your restaurant(s) attributes")
+      budget = st.number_input(
+         "Budget",
+         help = "Enter a budget by **typing** or using the **buttons** on the right (in USD)"
+      )
+      distance = st.text_input(
+         "Distance limit",
+         placeholder= "Enter a distantance limit",
+      )
+      rating = st.number_input(
+         "Minimum rating",
+         help = "Enter a rating by **typing** or using the **buttons** on the right",
+         max_value= 5.00
+      )
+      button = st.button('Find Restaurant')
+   if button:
       url = "https://api.spoonacular.com/food/restaurants/search?apiKey=e3204cea803349a783d0c7a7f379c3c1"
       querystring = {"query": "", "lat": 38.835268, "lng": -77.309476,
       "distance": int(distance), "budget": int(budget), "cuisine": cuisine, "min-rating": float(rating),
-      "sort": "cheapest", "page": 0}
+      "sort": "", "page": 0}
 
-      '''
-      no sure we need this but I kept
-      it just in case
-      
-      p.s delete this comment when necessary! (eventually all comments needs to be deleted)
-      '''
       headers = {
          "X-RapidAPI-Key": "e3204cea803349a783d0c7a7f379c3c1",
          "X-RapidAPI-Host": "https://api.spoonacular.com"
       }
-
+      with st.spinner("Loading..."):
+        time.sleep(5)
       response = requests.request("GET", url, headers=headers, params=querystring)
       data = response.json()
       for info in data["restaurants"]:
-         for img in info["logo_photos"]:
-            st.image(img, 100)
-         st.write("Name: " + info["name"])
-         st.write("Average rating: " + str(round(info["weighted_rating_value"], 1)))
-         st.write("Description: " + info["description"])
-         for img in info["food_photos"]:
-            st.image(img, 100)
-         st.write("Type: " + info["type"].capitalize())
-         st.write("Phone number: " + str(info["phone_number"]))
-         st.write("Street address: " + info["address"]["street_addr"])
-         st.write("City: " + info["address"]["city"])
-         st.write("State: " + info["address"]["state"])
-         st.write("Zip code: " + info["address"]["zipcode"])
-         st.write("Local operational hours:")
-         for key, value in info["local_hours"]["operational"].items():
-            st.write(key + ": " + value)
-         st.write("Delivery hours:")
-         for key, value in info["local_hours"]["delivery"].items():
-            st.write(key + ": " + value)
-         st.write("Pickup hours:")
-         for key, value in info["local_hours"]["pickup"].items():
-            st.write(key + ": " + value)
-         st.write("Cuisines:")
-         for key in info["cuisines"]:
-            st.write(key)
-         if(info["is_open"] == False):
-            st.write("Closed at the moment.")
-         if(info["is_open"] == True):
-            st.write("Open!")
-         if(info["offers_first_party_delivery"] == False):
-            st.write("Delivery is not handled by " + info["name"])
-         if(info["offers_first_party_delivery"] == True):
-            st.write("Delivery can be done by " + info["name"])
-         if(info["offers_third_party_delivery"] == False):
-            st.write("Delivery is not possible through third-party!")
-         if(info["offers_third_party_delivery"] == True):
-            st.write("Delivery can be done by third-party!")
+         with col1:
+            for img in info["logo_photos"]:
+               st.image(img, width = 200, caption = "Source: " + info["name"])
+               st.write("-----------------------------------------------------------")
+         with col3:
+            st.write("Name: " + info["name"])
+            st.write("Average rating: " + str(round(info["weighted_rating_value"], 1)))
+            if(info["is_open"] == False):
+               st.write("Closed at the moment.")
+            if(info["is_open"] == True):
+               st.write("Open!")
+            st.write("Phone number: " + str(info["phone_number"]))
+            st.write("Street address: " + info["address"]["street_addr"])
+            st.write("\n")
+            st.write("-----------------------------------------------------------")
+      st.success("Done!")

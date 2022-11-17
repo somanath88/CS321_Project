@@ -11,6 +11,8 @@
 
 - [x] Grocery finder is done. We need to find a way to center the images
 
+- [x] Weight tracker was finished implementing and and final touches were made to all the functionalites.
+
 - [x] Formatting is virually done for Find Restaurants, but some very minor changes to be made
 
 - [x] Fixed the output for Meal finder and Grocery Finder (width of images & text). Removed minimum values for meal finder and I added an input text for query. Also there is a function in the API called "Get Menu Item Information", im thinking on adding it to meal finder to get more details of each meal found and displaying them with the results

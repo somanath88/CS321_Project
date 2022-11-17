@@ -36,15 +36,15 @@ API(s) used: Spoonacular and Rapidapi (tools)
 
 Images links (credit belongs to the rightful owner):
 
-Tab1:
+Tab 1:
 https://media.cnn.com/api/v1/images/stellar/prod/201222103421-healthyfactor-meals.jpg
 
 
-Tab2:
+Tab 2:
 https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg
 
 
-Tab3:
+Tab 3:
 https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=980:*
 
 https://regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg

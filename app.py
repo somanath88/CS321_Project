@@ -1,20 +1,11 @@
-#Somanath Dandibhotla, Faisal Alkaabi, Rohit Barua
 import streamlit as st
 import requests
 import json
 import time
-from datetime import date, datetime
-import subprocess
-import os
-import sys
-import yaml
-import calendar
-import random
-from numpy.random import choice
 from PIL import Image
 
-st.set_page_config(page_title="30%70",page_icon = ":🧊:", layout= "wide", initial_sidebar_state="collapsed")
-st.header("30/70")
+st.set_page_config(page_title="I'm[Balance] = 30/70;",page_icon = ":pizza:", layout= "wide", initial_sidebar_state="collapsed")
+st.header("I'm[Balance] = 30/70;")
 
 
  
@@ -117,11 +108,6 @@ with tab3:
    st.header("Weight Tracker")
    st.image("https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1536,b_rgb:f8f8f8/catalog/Conditioning/Strength%20Equipment/Dumbbells/IP1100/IP1100-H_ejvjae.png", width=400)
    
-   if st.button("Run Python Code"):
-      subprocess.run([f"{sys.executable}", "fitness_planner.py"])
-     
-     
-   
 with tab4:
    source = "Source: Freepik"
    col1, col3, col2 = st.columns((5,1,5))
@@ -132,17 +118,26 @@ with tab4:
       st.header("Pick your restaurant(s) attributes")
       budget = st.number_input(
          "Budget",
-         help = "Enter a budget by **typing** or using the **buttons** on the right (in USD)"
+         help = "Enter a budget by **typing** or using the **buttons** on the right (USD)"
       )
-      distance = st.text_input(
+      distance = st.selectbox(
          "Distance limit",
-         placeholder= "Enter a distantance limit",
+         ('1', '2', '3'),
+         help = "Select a distance limit out of **3** choices (miles)"
       )
       rating = st.number_input(
          "Minimum rating",
          help = "Enter a rating by **typing** or using the **buttons** on the right",
          max_value= 5.00
       )
+      name = ""
+      st.header("Optional")
+      name = st.text_input(
+         "Restaurant name",
+         placeholder = "Enter a restaurant name",
+         help = "Enter a restaurant name by typing on the field below"
+      )
+
       button = st.button('Find Restaurant')
 
    if not button:
@@ -229,8 +224,10 @@ with tab4:
          )
 
    if button:
+      with st.spinner("Loading..."):
+        time.sleep(5)
       url = "https://api.spoonacular.com/food/restaurants/search?apiKey=77495ee53c1a4c1a8310504513165f8e"
-      querystring = {"query": "", "lat": 38.835268, "lng": -77.309476,
+      querystring = {"query": name, "lat": 38.835268, "lng": -77.309476,
       "distance": int(distance), "budget": int(budget), "cuisine": cuisine, "min-rating": float(rating),
       "sort": "", "page": 0}
 
@@ -238,8 +235,6 @@ with tab4:
          "X-RapidAPI-Key": "77495ee53c1a4c1a8310504513165f8e",
          "X-RapidAPI-Host": "https://api.spoonacular.com"
       }
-      with st.spinner("Loading..."):
-        time.sleep(5)
       response = requests.request("GET", url, headers=headers, params=querystring)
       data = response.json()
       st.markdown(

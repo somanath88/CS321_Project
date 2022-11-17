@@ -17,6 +17,8 @@
 
 - [x] Fixed the output for Meal finder and Grocery Finder (width of images & text). Removed minimum values for meal finder and I added an input text for query. Also there is a function in the API called "Get Menu Item Information", im thinking on adding it to meal finder to get more details of each meal found and displaying them with the results
 
+- [x] Added three images to Tab 3 (weight tracker) + some basic information about the function
+
 
 
 API KEY : 6514dc2a1dmsh2ad13bdb1c40ba5p1c95b1jsn9922c38c90fa (free version)
@@ -32,8 +34,25 @@ API KEY: e3204cea803349a783d0c7a7f379c3c1 (Rohit's Spoonacular's API KEY - free 
 
 API(s) used: Spoonacular and Rapidapi (tools)
 
-Tab4 image links (credit belongs to the rightful owner):
+Images links (credit belongs to the rightful owner):
 
+Tab1:
+https://media.cnn.com/api/v1/images/stellar/prod/201222103421-healthyfactor-meals.jpg
+
+
+Tab2:
+https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg
+
+
+Tab3:
+https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=980:*
+
+https://regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg
+
+https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/10+Weightlifting+Exercises+for+Beginners/weightlifting-exercises-for-beginners-carousel.jpg
+
+
+Tab 4:
 https://img.freepik.com/free-photo/still-life-delicious-american-hamburger_23-2149637291.jpg?w=1480&t=st=1668638075~exp=1668638675~hmac=edf0afa2de94963930e5f67270710b13fb5a6e5e8fbd8da607fe8fef1c61f0e0
 
 https://img.freepik.com/free-photo/indian-butter-chicken-black-bowl-wooden-table_123827-20633.jpg?w=1480&t=st=1668652473~exp=1668653073~hmac=7cfea617d56db5c38b3412ebf51c7677aa94672bd1031517552342775ced7fb2
@@ -45,3 +64,6 @@ https://img.freepik.com/free-photo/top-view-closeup-plates-chinese-foods-white-t
 https://img.freepik.com/free-photo/tasty-appetizing-classic-italian-spaghetti-pasta-with-tomato-sauce-cheese-parmesan-basil-plate-ingredients-cooking-pasta-dark-table-flat-lay-top-view-copy-spce_1150-45812.jpg?w=1480&t=st=1668648377~exp=1668648977~hmac=ce7dab7d13ef19a9a5263aa0d7397b53682f775914c7349a94ce3554b443b1b0
 
 https://img.freepik.com/free-photo/traditional-mexican-delicious-dish-front-view_23-2148224145.jpg?w=1480&t=st=1668654960~exp=1668655560~hmac=6a57ee7061cdefd65bcf00248c6eb8fb74d9f8c1587fd8f28b4d856d7cd06331
+
+
+

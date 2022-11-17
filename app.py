@@ -11,11 +11,13 @@ import yaml
 import calendar
 import random
 from numpy.random import choice
-from PIL import Image
+from PIL import Image 
 
-st.set_page_config(page_title="I'm[Balance] = 30/70;",page_icon = ":pizza:", layout= "wide", initial_sidebar_state="collapsed")
-st.header("I'm[Balance] = 30/70;")
-
+st.set_page_config(page_title="I'm[Balanced] = '30/70';",page_icon = ":pizza:", layout= "wide", initial_sidebar_state="collapsed")
+#st.header("I'm[Balanced] = '30/70';")
+st.markdown('<p class="big-font"><b>I\'m<span style="font-family:Courier New; color:White; font-size: 40px;">[</span>Balanced<span style="font-family:Courier New; color:White; font-size: 40px;">]</span></b><span class="small-font"><b><span style="font-family:Courier New; color:White; font-size: 20px;">=</span> \'30/70\'<span style="font-family:Courier New; color:White; font-size: 20px;">;</span></b></span></p>', unsafe_allow_html=True)
+st.markdown("""<style>.big-font {font-family:Courier New; color:White; font-size:40px !important;}</style>""", unsafe_allow_html=True)
+st.markdown("""<style>.small-font {font-family:Courier New; color:White;font-size:20px !important;}</style>""", unsafe_allow_html=True)
 
  
 
@@ -23,7 +25,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["Meal Finder", "Groceries", "Weight Tracker", 
 
 hide_menu_style = """
          <style>
-         #MainMenu {visibility: hidden; }
+         
          footer {visibility: hidden; }
          </style>
          """
@@ -117,11 +119,11 @@ with tab3:
    st.header("Weight Tracker")
    col1, col2, col3 = st.columns(3)
    col2.write("\n")
-   col2.image("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=980:*",caption="Weight Tracking is important when it comes to gaining muscles because it has been proven that improving the weight you lift each time you hit a certain muscle, it leads to fast muscle gains.", width=400)
+   col2.image("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=980:*",caption="Weight Tracking is important when it comes to growing muscle because it has been proven that increasing the weight you lift on a personalized schedule everytime you train a specific muscle, leads to fast muscle gains.", width=400)
    col2.write("\n")
-   col2.image("https://regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg",caption="This function focuses on 13 muscle groups, and it includes 75 exercises (5 exercises in each day you workout).", width=400)
+   col2.image("https://regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg",caption="This function focuses on training 13 muscle groups, and includes 75 in-built exercises to choose from. Feel free to add your own custom exercise and weekly routine! (an average of 5 popular exercises included for each muscle group).", width=400)
    col2.write("\n")
-   col2.image("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/10+Weightlifting+Exercises+for+Beginners/weightlifting-exercises-for-beginners-carousel.jpg",caption="The fucntion will suggest weights to lift based on a certain formula that is suggested by professional trainers to help you increase your ability slightly each time you hit a certain muscle.", width=400)
+   col2.image("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/10+Weightlifting+Exercises+for+Beginners/weightlifting-exercises-for-beginners-carousel.jpg",caption="The weight training tracker will suggest weights to lift based on a certain formula that is suggested by professional trainers to help you increase your ability each time you train a certain muscle.", width=400)
    
    if col2.button("Run Python Code"):
       subprocess.run([f"{sys.executable}", "fitness_planner.py"])

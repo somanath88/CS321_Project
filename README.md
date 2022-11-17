@@ -30,6 +30,16 @@ API KEY: e3204cea803349a783d0c7a7f379c3c1 (Rohit's Spoonacular's API KEY - free 
 
 API(s) used: Spoonacular and Rapidapi (tools)
 
-Thank you, Chan Walrus, for this image!
+Tab4 image links (credit belongs to the rightful owner):
 
-https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg
+https://img.freepik.com/free-photo/still-life-delicious-american-hamburger_23-2149637291.jpg?w=1480&t=st=1668638075~exp=1668638675~hmac=edf0afa2de94963930e5f67270710b13fb5a6e5e8fbd8da607fe8fef1c61f0e0
+
+https://img.freepik.com/free-photo/indian-butter-chicken-black-bowl-wooden-table_123827-20633.jpg?w=1480&t=st=1668652473~exp=1668653073~hmac=7cfea617d56db5c38b3412ebf51c7677aa94672bd1031517552342775ced7fb2
+
+https://img.freepik.com/free-photo/japanese-seafood-ramen-with-cuttlefish-sauce_1205-11088.jpg?w=1480&t=st=1668653071~exp=1668653671~hmac=abceb4a7186938806416fb6b2f012e8404dadb01139a19b25ac26af9c6140b01
+
+https://img.freepik.com/free-photo/top-view-closeup-plates-chinese-foods-white-table_181624-48736.jpg?w=1480&t=st=1668650166~exp=1668650766~hmac=cef76c5a8057d77837aeae44a01744aecf792dc4044ef8bb3edf78653fa218e8
+
+https://img.freepik.com/free-photo/tasty-appetizing-classic-italian-spaghetti-pasta-with-tomato-sauce-cheese-parmesan-basil-plate-ingredients-cooking-pasta-dark-table-flat-lay-top-view-copy-spce_1150-45812.jpg?w=1480&t=st=1668648377~exp=1668648977~hmac=ce7dab7d13ef19a9a5263aa0d7397b53682f775914c7349a94ce3554b443b1b0
+
+https://img.freepik.com/free-photo/traditional-mexican-delicious-dish-front-view_23-2148224145.jpg?w=1480&t=st=1668654960~exp=1668655560~hmac=6a57ee7061cdefd65bcf00248c6eb8fb74d9f8c1587fd8f28b4d856d7cd06331

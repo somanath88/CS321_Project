@@ -12,6 +12,15 @@ st.header("30/70")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Meal Finder", "Groceries", "Weight Tracker", "Find Restaurants"])
 
+hide_menu_style = """
+         <style>
+         #MainMenu {visibility: hidden; }
+         footer {visibility: hidden; }
+         </style>
+         """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
 with tab1:
    st.header("Meal Finder")
    st.image("https://media.cnn.com/api/v1/images/stellar/prod/201222103421-healthyfactor-meals.jpg",width=400)

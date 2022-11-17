@@ -114,9 +114,15 @@ with tab2:
 
 with tab3:
    st.header("Weight Tracker")
-   st.image("https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1536,b_rgb:f8f8f8/catalog/Conditioning/Strength%20Equipment/Dumbbells/IP1100/IP1100-H_ejvjae.png", width=400)
+   col1, col2, col3 = st.columns(3)
+   col2.write("\n")
+   col2.image("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bench-press-spot-1571829590.jpg?resize=980:*",caption="Weight Tracking is important when it comes to gaining muscles because it has been proven that improving the weight you lift each time you hit a certain muscle, it leads to fast muscle gains.", width=400)
+   col2.write("\n")
+   col2.image("https://regymenfitness.com/wp-content/uploads/2021/12/Sportive-serious-people-liftin-980x654.jpg",caption="This function focuses on 13 muscle groups, and it includes 75 exercises (5 exercises in each day you workout).", width=400)
+   col2.write("\n")
+   col2.image("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/10+Weightlifting+Exercises+for+Beginners/weightlifting-exercises-for-beginners-carousel.jpg",caption="The fucntion will suggest weights to lift based on a certain formula that is suggested by professional trainers to help you increase your ability slightly each time you hit a certain muscle.", width=400)
    
-   if st.button("Run Python Code"):
+   if col2.button("Run Python Code"):
       subprocess.run([f"{sys.executable}", "fitness_planner.py"])
    
 with tab4:

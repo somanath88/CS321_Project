@@ -243,13 +243,13 @@ with tab4:
    if button:
       with st.spinner("Loading..."):
         time.sleep(5)
-      url = "https://api.spoonacular.com/food/restaurants/search?apiKey=e3204cea803349a783d0c7a7f379c3c1 "
+      url = "https://api.spoonacular.com/food/restaurants/search?apiKey=e3204cea803349a783d0c7a7f379c3c1"
       querystring = {"query": name, "lat": 38.835268, "lng": -77.309476,
       "distance": int(distance), "budget": int(budget), "cuisine": cuisine, "min-rating": float(rating),
       "sort": "", "page": 0}
 
       headers = {
-         "X-RapidAPI-Key": "e3204cea803349a783d0c7a7f379c3c1 ",
+         "X-RapidAPI-Key": "e3204cea803349a783d0c7a7f379c3c1",
          "X-RapidAPI-Host": "https://api.spoonacular.com"
       }
       response = requests.request("GET", url, headers=headers, params=querystring)

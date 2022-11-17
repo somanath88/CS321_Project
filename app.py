@@ -38,15 +38,26 @@ with tab1:
 
       result = response.json()
 
-      #st.write(result)
+      url2 = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/menuItems/"
+
+      
+
 
       for i in result["menuItems"]:
          st.image(i["image"], caption=i["title"]+"\nRestaurant: "+i["restaurantChain"],width=200)
+         response2 = requests.request("GET", url2+str(i["id"]), headers=headers)
+         result2 = response2.json()
+         #st.write(result2)
+         st.caption("Calories: "+str(result2["nutrition"]["calories"]))
+         st.caption("Protein: "+str(result2["nutrition"]["protein"]))
+         st.caption("Carbs: "+str(result2["nutrition"]["carbs"]))
+         st.caption("Fat: "+str(result2["nutrition"]["fat"]))
+         st.write("\n")
 
 
 with tab2:
    st.header("Groceries")
-   st.image("https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg", width=250)
+   st.image("https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-1525213305.jpg", width=400)
    itemName = st.text_input("Item's Name:");
    if itemName:
       st.write('Input the macros of ',itemName)
@@ -58,7 +69,7 @@ with tab2:
    if st.button('Find Item'):
       url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search"
 
-      querystring = {"query":itemName,"maxCalories":itemCalories,"minProtein":"0","maxProtein":itemProteins,"minFat":"0","maxFat":itemFats,"minCarbs":"0","maxCarbs":itemCarbs,"minCalories":"0","offset":"0","number":"10"}
+      querystring = {"query":itemName,"maxCalories":itemCalories,"minProtein":"0","maxProtein":itemProteins,"minFat":"0","maxFat":itemFats,"minCarbs":"0","maxCarbs":itemCarbs,"minCalories":"0","offset":"0","number":"5"}
 
       headers = {
          "X-RapidAPI-Key": "442463fda5msh2003056aa2a46ebp1d1738jsn41994962d005",
@@ -69,10 +80,17 @@ with tab2:
 
       result = response.json()
 
+      url2 = url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/"
 
       for i in result["products"]:
          st.image(i["image"], caption=i["title"],width=250)
-         st.write("")
+         response2 = requests.request("GET", url2+str(i["id"]), headers=headers)
+         result2 = response2.json()
+         st.caption("Calories: "+str(result2["nutrition"]["calories"]))
+         st.caption("Protein: "+str(result2["nutrition"]["protein"]))
+         st.caption("Carbs: "+str(result2["nutrition"]["carbs"]))
+         st.caption("Fat: "+str(result2["nutrition"]["fat"]))
+         st.write("\n")
 
 
 

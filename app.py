@@ -2,6 +2,14 @@ import streamlit as st
 import requests
 import json
 import time
+from datetime import date, datetime
+import subprocess
+import os
+import sys
+import yaml
+import calendar
+import random
+from numpy.random import choice
 from PIL import Image
 
 st.set_page_config(page_title="I'm[Balance] = 30/70;",page_icon = ":pizza:", layout= "wide", initial_sidebar_state="collapsed")
@@ -107,6 +115,9 @@ with tab2:
 with tab3:
    st.header("Weight Tracker")
    st.image("https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1536,b_rgb:f8f8f8/catalog/Conditioning/Strength%20Equipment/Dumbbells/IP1100/IP1100-H_ejvjae.png", width=400)
+   
+   if st.button("Run Python Code"):
+      subprocess.run([f"{sys.executable}", "fitness_planner.py"])
    
 with tab4:
    source = "Source: Freepik"

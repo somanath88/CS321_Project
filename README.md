@@ -34,6 +34,8 @@ API KEY: e3204cea803349a783d0c7a7f379c3c1 (Rohit's Spoonacular's API KEY - free 
 
 API(s) used: Spoonacular and Rapidapi (tools)
 
+Inspiration and Reuse: evlian, albertrtk on Github
+
 Images links (credit belongs to the rightful owner):
 
 Tab 1:

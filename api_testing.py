@@ -17,15 +17,9 @@ configuration = openapi_client.Configuration(
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
 
 # Configure API key authorization: apiKeyScheme
 configuration.api_key['apiKeyScheme'] = 'e3204cea803349a783d0c7a7f379c3c1'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKeyScheme'] = 'Bearer'
-
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
